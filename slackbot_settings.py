@@ -1,7 +1,14 @@
 # coding: utf-8
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
 # botアカウントのトークンを指定
-API_TOKEN = "xoxb-324922503859-528824871717-HGFhgH7XC1sUQYcSZheDpNnV"
+API_TOKEN= os.environ.get("API_TOKEN") # 環境変数の値をAPに代入
+
 
 # このbot宛のメッセージで、どの応答にも当てはまらない場合の応答文字列
 DEFAULT_REPLY = "何言ってだこいつ"
